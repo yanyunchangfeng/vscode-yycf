@@ -64,7 +64,12 @@
     "extensions-ci": "node --max-old-space-size=8095 ./node_modules/gulp/bin/gulp.js extensions-ci",
     "extensions-ci-pr": "node --max-old-space-size=4095 ./node_modules/gulp/bin/gulp.js extensions-ci-pr",
     "perf": "node scripts/code-perf.js",
-    "update-build-ts-version": "yarn add typescript@next && tsc -p ./build/tsconfig.build.json"
+    "update-build-ts-version": "yarn add typescript@next && tsc -p ./build/tsconfig.build.json",
+    "code-web": "./scripts/code-web.sh",
+    "code-electron": "./scripts/code.sh",
+    "watch-code-web": "run-s watch-clientd watch-extensionsd code-web",
+    "watch-electron": "run-s watch-clientd watch-extensionsd code-electron",
+    "build-drawin": "yarn gulp vscode-darwin-x64"
   },
   "dependencies": {
     "@microsoft/1ds-core-js": "^3.2.13",
